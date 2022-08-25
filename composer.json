@@ -1,0 +1,42 @@
+{
+  "name": "andriievskyi/coin",
+  "description": "the script that fetches exchange rates from 2+ cryptocurrency exchangers via API and puts the data into the database.",
+  "require": {
+    "php": ">=8.1",
+    "symfony/console": "^6.1",
+    "ext-curl": "*",
+    "ext-pgsql": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^6.1",
+    "symfony/browser-kit": "^6.1",
+    "symfony/var-dumper": "^6.1"
+  },
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Bot\\": "src/"
+    },
+    "classmap": [
+      "src"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bot\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Valentyn Badiul",
+      "email": "ur5fes@yahoo.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}

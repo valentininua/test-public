@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+if (!ini_get('date.timezone')) {
+    ini_set('date.timezone', 'UTC');
+}
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Bot\CoinDomain\Command\CoinRateCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+$app->add(new CoinRateCommand());
+try {
+    $app->run();
+} catch (Exception $e) {
+    exit('Esrror');
+}

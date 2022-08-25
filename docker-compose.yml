@@ -1,0 +1,23 @@
+version: "3.7"
+
+networks:
+  coingeckocom-docker.network:
+    driver: bridge
+
+services:
+  postgres:
+    build: ./docker/postgres
+    container_name: coingeckocom_postgres
+    tty: true
+    restart: always
+    networks:
+      - coingeckocom-docker.network
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./docker/postgres/dbdata:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+
